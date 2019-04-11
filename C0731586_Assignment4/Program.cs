@@ -15,6 +15,7 @@ namespace C0731586_Assignment4
         {
             Program p = new Program();
             p.Beowulf = new ArrayList();
+            p.Run();
         }
 
         public void Run()
@@ -25,8 +26,9 @@ namespace C0731586_Assignment4
         public void ReadTextFiles()
         {
             //Read file using StreamReader. Reads file line by line
-            using (StreamReader file = new StreamReader("U:/Users/731586/C0731586_Assignment4"))
+            using (StreamReader file = new StreamReader("U:/Users/731586/Beowulf.txt"))
             {
+                int words = 1;
                 int counter = 0;
                 string ln;
 
@@ -34,12 +36,32 @@ namespace C0731586_Assignment4
                 {
                     Console.WriteLine(ln);
                     Beowulf.Add(ln);
+                    counter++;
                 }
-                file.Close();
-                Console.WriteLine($"File has {counter} lines.");
+                    file.Close();
+                    Console.WriteLine($"File has {counter} lines.");
+                    Console.WriteLine("Number of words in the string: {0}", words);
+             }
+
+         }
+        public int FindNumberOfBlankSpaces(string line)
+        {
+            int countletters = 0;
+            int countSpaces = 0;
+
+            foreach (char c in line)
+            {
+                if (char.IsLetter(c))
+                {
+                    countletters++;
+                }
+
+                if (char.IsWhiteSpace(c))
+                {
+                    countSpaces++;
+                }
             }
+            return countSpaces;
         }
-
-
     }
 }
