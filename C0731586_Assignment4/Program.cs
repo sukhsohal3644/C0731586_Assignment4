@@ -73,6 +73,7 @@ namespace C0731586_Assignment4
         public void ProcessArrayList()
         {
             int LineNumber = 0;
+            int LineNumber2 = 0;
             foreach (var line in Beowulf)
 
             {
@@ -85,6 +86,19 @@ namespace C0731586_Assignment4
                 }
             }
             Console.WriteLine(LineNumber);
+
+            foreach (var line in Beowulf)
+
+            {
+
+                if (ContainWord(line.ToString().ToLower(), "fare") && !ContainWord(line.ToString().ToLower(), "war"))
+                {
+                    Console.WriteLine(line);
+                    Console.WriteLine("Line number is {0}", LineNumber2);
+                    LineNumber2++;
+                }
+            }
+            Console.WriteLine(LineNumber2);
         }
 
 
