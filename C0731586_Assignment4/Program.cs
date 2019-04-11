@@ -67,6 +67,7 @@ namespace C0731586_Assignment4
             Console.WriteLine("Number of words: " + countSpaces);
             
             return countSpaces;
+
         }
 
 
@@ -99,6 +100,7 @@ namespace C0731586_Assignment4
                 }
             }
             Console.WriteLine(LineNumber2);
+
         }
 
 
