@@ -84,6 +84,8 @@ namespace C0731586_Assignment4
                     Console.WriteLine(line);
                     Console.WriteLine("Line number is {0}", LineNumber);
                     LineNumber++;
+
+
                 }
             }
             Console.WriteLine(LineNumber);
