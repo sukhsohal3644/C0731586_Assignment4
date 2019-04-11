@@ -16,6 +16,9 @@ namespace C0731586_Assignment4
             Program p = new Program();
             p.Beowulf = new ArrayList();
             p.Run();
+            string text = System.IO.File.ReadAllText("/Users/731586/Beowulf.txt");
+            p.FindNumberOfBlankSpaces(text);
+            p.ProcessArrayList();
         }
 
         public void Run()
@@ -61,7 +64,37 @@ namespace C0731586_Assignment4
                     countSpaces++;
                 }
             }
+            Console.WriteLine("Number of words: " + countSpaces);
+            
             return countSpaces;
+        }
+
+
+        public void ProcessArrayList()
+        {
+            int LineNumber = 0;
+            foreach (var line in Beowulf)
+
+            {
+
+                if (ContainWord(line.ToString().ToLower(), "sea") && ContainWord(line.ToString().ToLower(), "fare"))
+                {
+                    Console.WriteLine(line);
+                    Console.WriteLine("Line number is {0}", LineNumber);
+                    LineNumber++;
+                }
+            }
+            Console.WriteLine(LineNumber);
+        }
+
+
+        public bool ContainWord(string line, string Word)
+        {
+            if (line.Contains(Word) == true)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
